@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/marshacb/DreamDeeplyHairAPI/dreamdeeplyhair/internal/product"
+	"github.com/marshacb/DreamDeeplyHairAPI/internal/product"
 )
 
 type MockProduct struct{}
