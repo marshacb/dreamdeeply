@@ -3,8 +3,9 @@ package product
 import (
 	"context"
 
-	"github.com/marshacb/dreamdeeply/interfaces"
-	"github.com/marshacb/dreamdeeply/models"
+	"dreamdeeply/interfaces"
+
+	"dreamdeeply/models"
 )
 
 // List returns all known products

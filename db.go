@@ -11,8 +11,8 @@ import (
 	// mysql imported locally to work with database/sql
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/golang-migrate/migrate"
-	"github.com/golang-migrate/migrate/v4/database/mysql"
-	_ "github.com/golang-migrate/migrate/v4/source/file"
+	"github.com/golang-migrate/migrate/database/mysql"
+	_ "github.com/golang-migrate/migrate/source/file"
 )
 
 // DB gets a connection to a database
@@ -33,7 +33,6 @@ func DB(connectionString string) (*gorm.DB, error) {
 func getMigrator(db *sql.DB, migrationPath string) (*migrate.Migrate, error) {
 	driver, _ := mysql.WithInstance(db, &mysql.Config{})
 	return migrate.NewWithDatabaseInstance(
-		// TODO: How can we ensute the working dir is always the same so we can path to this migration folder?
 		migrationPath,
 		"mysql",
 		driver,

@@ -1,7 +1,7 @@
 package interfaces
 
 import (
-	"github.com/marshacb/dreamdeeply/models"
+	"dreamdeeply/models"
 )
 
 // API represents the method set of behavior of dreamdeeply

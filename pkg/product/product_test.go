@@ -4,13 +4,14 @@ import (
 	"context"
 	"testing"
 
-	"github.com/marshacb/dreamdeeply/models"
+	"dreamdeeply/models"
+	"dreamdeeply/pkg/product"
 )
 
 type MockProduct struct{}
 
 func (m *MockProduct) GetAllProducts() (*[]models.Product, error) {
-	products := []product.Product{
+	products := []models.Product{
 		{
 			Name: "Ocean Wave",
 		},
