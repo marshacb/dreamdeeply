@@ -4,28 +4,28 @@ import (
 	"context"
 	"testing"
 
-	"github.com/marshacb/dreamdeeply/internal/product"
+	"github.com/marshacb/dreamdeeply/models"
 )
 
 type MockProduct struct{}
 
-func (m *MockProduct) GetAllProducts() (*[]product.Product, error) {
+func (m *MockProduct) GetAllProducts() (*[]models.Product, error) {
 	products := []product.Product{
-		Product{
+		{
 			Name: "Ocean Wave",
 		},
 	}
 
-	return products, nil
+	return &products, nil
 }
 
 func TestListProduct(t *testing.T) {
 	ctx := context.Background()
-	mp := MockProduct{}
+	mp := &MockProduct{}
 
-	products := List(ctx, &mp)
+	products, _ := product.List(ctx, mp)
 
-	if len(products) != 1 {
+	if len(*products) != 1 {
 		t.Errorf("products should not be empty")
 	}
 }
