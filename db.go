@@ -1,4 +1,4 @@
-package dreamdeeplyhair
+package dreamdeeply
 
 import (
 	"github.com/jinzhu/gorm"
